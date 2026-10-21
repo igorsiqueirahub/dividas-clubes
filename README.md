@@ -10,9 +10,7 @@ Copie o conteúdo de [`embed.html`](embed.html) para o código-fonte da sua pág
 O script ajusta a altura do iframe e, quando o leitor muda de aba ou abre um clube,
 rola a página de volta ao início do painel (importante no celular).
 
-Parâmetros: `?embed=1` (só abas e gráficos), `&fundo=branco|transparente`,
-`&tema=vermelho` (vermelho, preto e branco, cantos retos, fonte Figtree),
-`&titulo=0` (esconde o título compacto do embed), `&cabecalho=1` (cabeçalho completo), `&sobre=1`. Aba e série no `#`: `#aba=atrasos&serie=A`,
-`#aba=divida&serie=B`, `#aba=atrasos&serie=A&clube=Flamengo`.
+Parâmetros (opcionais): `?tema=neutro` (visual azul-petróleo no lugar do vermelho),
+`?embed=1` (só abas e tabelas), `&fundo=branco|transparente`, `&cabecalho=1`, `&sobre=1`.
+Aba e série no `#`: `#aba=atrasos&serie=A`, `#aba=divida&serie=B`, `#aba=atrasos&serie=A&clube=Flamengo`.
 
-Exemplo de embed numa página de portal: [`teste-portal.html`](teste-portal.html).

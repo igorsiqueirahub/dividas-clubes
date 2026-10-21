@@ -1,8 +1,8 @@
 <!-- Cole este trecho no código-fonte da sua página, onde o painel deve aparecer.
-     Para abrir em outra aba ou série, troque o final do src: #aba=atrasos&serie=B, #aba=divida&serie=A ... -->
+     Para abrir em outra aba ou série, acrescente ao src: #aba=atrasos&serie=B, #aba=divida&serie=A ... -->
 <iframe class="dividas-clubes"
-  src="https://igorsiqueirahub.github.io/dividas-clubes/?embed=1&fundo=branco#aba=atrasos&serie=A"
-  title="Dívidas dos clubes das Séries A e B"
+  src="https://igorsiqueirahub.github.io/dividas-clubes/"
+  title="Dívidas dos clubes: como está o seu?"
   allow="clipboard-write" style="width:100%;height:1200px;border:0;display:block" loading="lazy"></iframe>
 <script>
 /* Ajusta a altura do iframe, volta ao topo do painel quando o leitor navega nele
@@ -17,7 +17,7 @@
       if (d.type === 'dividas-clubes:altura') f.style.height = d.altura + 'px';
       if (d.type === 'dividas-clubes:rolar') {
         var alvo = f.getBoundingClientRect().top + window.pageYOffset + d.y;
-        if (window.pageYOffset > alvo) window.scrollTo({ top: alvo, behavior: 'smooth' });
+        if (Math.abs(window.pageYOffset - alvo) > 4) window.scrollTo({ top: alvo, behavior: 'smooth' });
       }
     });
   });
