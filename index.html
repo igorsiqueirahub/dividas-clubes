@@ -17,6 +17,8 @@ html.embed .painel-anresf{padding-bottom:16px}
 html.embed:not(.com-cabecalho) header.abertura,html.embed #faq,html.embed:not(.com-sobre) .sobre{display:none!important}
 html.embed:not(.com-cabecalho) .nav{margin-top:16px}
 html.fundo-branco body,html.fundo-branco body:has(.painel-anresf),html.fundo-branco .painel-anresf{background:#fff}
+html.fundo-branco .painel-anresf .nav{background:rgba(255,255,255,.9)}
+html.fundo-transparente .painel-anresf .nav{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
 html.fundo-transparente body,html.fundo-transparente body:has(.painel-anresf),html.fundo-transparente .painel-anresf{background:transparent}
 .fonte{font:13px/1.5 "Inter",system-ui,sans-serif;color:#5E6673;max-width:1136px;margin:0 auto;padding:0 24px 20px;box-sizing:border-box}
 .fonte a{color:#17566C}
@@ -74,6 +76,13 @@ html.fundo-transparente body,html.fundo-transparente body:has(.painel-anresf),ht
 iniciar(document.getElementById('root'));
 (function(){if(window.parent===window)return;var last=0;function send(){var h=Math.ceil(document.documentElement.getBoundingClientRect().height);
 if(h!==last){last=h;parent.postMessage({type:'dividas-clubes:altura',altura:h},'*');}}
-new ResizeObserver(send).observe(document.documentElement);addEventListener('load',send);setInterval(send,1000);})();
+new ResizeObserver(send).observe(document.documentElement);addEventListener('load',send);setInterval(send,1000);
+/* Quando o leitor muda de aba, série, filtro ou abre um clube, pede à página-mãe que volte ao topo do painel
+   (o iframe tem a altura toda do conteúdo, então a rolagem acontece na página-mãe) */
+var app=document.getElementById('app');function assin(){var c=app.firstElementChild;return app.children.length+'|'+(c?c.className+c.textContent.slice(0,300):'');}
+var antes=assin(),ultimoToque=0;addEventListener('click',function(){ultimoToque=Date.now();},true);
+new MutationObserver(function(){var a=assin();if(a===antes)return;antes=a;if(Date.now()-ultimoToque>1500)return;
+var alvo=document.querySelector('html.embed:not(.com-cabecalho) .nav')||app;var y=Math.max(0,alvo.getBoundingClientRect().top+scrollY-8);
+parent.postMessage({type:'dividas-clubes:rolar',y:y},'*');}).observe(app,{childList:true,subtree:true});})();
 </script>
 </body></html>
