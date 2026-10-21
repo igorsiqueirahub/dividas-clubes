@@ -11,5 +11,8 @@ O script ajusta a altura do iframe e, quando o leitor muda de aba ou abre um clu
 rola a página de volta ao início do painel (importante no celular).
 
 Parâmetros: `?embed=1` (só abas e gráficos), `&fundo=branco|transparente`,
+`&tema=vermelho` (vermelho, preto e branco, cantos retos, fonte Figtree),
 `&cabecalho=1`, `&sobre=1`. Aba e série no `#`: `#aba=atrasos&serie=A`,
 `#aba=divida&serie=B`, `#aba=atrasos&serie=A&clube=Flamengo`.
+
+Exemplo de embed numa página de portal: [`teste-portal.html`](teste-portal.html).
