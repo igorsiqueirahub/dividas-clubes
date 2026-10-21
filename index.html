@@ -24,13 +24,15 @@ html.tema-vermelho .painel-anresf{--ouro:#CB0003;--ouro-claro:#FF7366;--ouro-tex
 html.tema-vermelho body,html.tema-vermelho body:has(.painel-anresf),html.tema-vermelho .painel-anresf{background:#fff}
 html.tema-vermelho .painel-anresf .nav{background:rgba(255,255,255,.95)}
 html.tema-vermelho .painel-anresf .busca,html.tema-vermelho .painel-anresf .chip-meta,html.tema-vermelho .painel-anresf .sel3 select,html.tema-vermelho .painel-anresf #placar,html.tema-vermelho .painel-anresf .seg,html.tema-vermelho .painel-anresf .seg button,html.tema-vermelho .painel-anresf .data,html.tema-vermelho .painel-anresf .cartao,html.tema-vermelho .painel-anresf .tw,html.tema-vermelho .painel-anresf .chip,html.tema-vermelho .painel-anresf .sobre,html.tema-vermelho .painel-anresf .legenda,html.tema-vermelho .painel-anresf .barras,html.tema-vermelho .painel-anresf .barra .tag,html.tema-vermelho .painel-anresf .voltar,html.tema-vermelho .painel-anresf .tile,html.tema-vermelho .painel-anresf .proc-box,html.tema-vermelho .painel-anresf .painel,html.tema-vermelho .painel-anresf .rk,html.tema-vermelho .painel-anresf .rk-fora .bl,html.tema-vermelho .painel-anresf .chips button,html.tema-vermelho .painel-anresf .nav-caixa,html.tema-vermelho .painel-anresf .btn-link,html.tema-vermelho .painel-anresf .qs,html.tema-vermelho .painel-anresf .serie{border-radius:4px!important}
+html.tema-vermelho .painel-anresf .qs details,html.tema-vermelho .painel-anresf .qs summary{border-radius:4px!important}
+html.tema-vermelho .painel-anresf .qs details[open] summary{border-radius:4px 4px 0 0!important}
 html.tema-vermelho .painel-anresf .nav-caixa{border:0;border-top:2px solid #000;border-bottom:1px solid #E6E6E6;border-radius:0!important}
 html.tema-vermelho .painel-anresf .abas button{text-transform:uppercase;letter-spacing:.6px;font-size:13px}
 html.tema-vermelho .painel-anresf .etiqueta{border:0;padding:0;color:#CB0003;letter-spacing:.6px}
 html.tema-vermelho .painel-anresf .etiqueta:before{content:"";display:inline-block;width:8px;height:8px;background:#CB0003;margin-right:8px}
 html.tema-vermelho .painel-anresf h1,html.tema-vermelho .painel-anresf h2,html.tema-vermelho .painel-anresf h3,html.tema-vermelho .painel-anresf .resumo{letter-spacing:-.02em}
 html.tema-vermelho .painel-anresf h1{font-weight:800}
-html.tema-vermelho .painel-anresf .cartao,html.tema-vermelho .painel-anresf .tw,html.tema-vermelho .painel-anresf .barras,html.tema-vermelho .painel-anresf .legenda,html.tema-vermelho .painel-anresf .tile{box-shadow:none;border:1px solid #E6E6E6}
+html.tema-vermelho .painel-anresf .cartao,html.tema-vermelho .painel-anresf .tw,html.tema-vermelho .painel-anresf .barras,html.tema-vermelho .painel-anresf .legenda:not(.cores),html.tema-vermelho .painel-anresf .tile{box-shadow:none;border:1px solid #E6E6E6}
 html.tema-vermelho .painel-anresf #placar a{color:#FF7366}
 html.tema-vermelho .fonte{font-family:"Figtree",Arial,sans-serif}
 html.tema-vermelho .fonte a{color:#CB0003}
@@ -41,6 +43,7 @@ html.embed .painel-anresf .wrap{padding-left:2px;padding-right:2px}
 html.embed .fonte{padding-left:2px;padding-right:2px}
 html.em-iframe .painel-anresf .wrap,html.em-iframe .fonte{padding-left:2px;padding-right:2px}
 html.em-iframe .painel-anresf{padding-bottom:16px}
+@media (min-width:601px) and (max-width:900px){html .painel-anresf #placar{grid-template-columns:repeat(3,minmax(0,1fr))}html .painel-anresf .pl-item:nth-child(n+3){box-shadow:none}html .painel-anresf .pl-item+.pl-item:before{display:block!important}html .painel-anresf .pl-item{padding:18px 16px 16px}}
 html.em-iframe .painel-anresf .abertura{padding-top:8px}
 html.embed:not(.com-cabecalho) header.abertura,html.embed #faq,html.embed:not(.com-sobre) .sobre{display:none!important}
 html.embed:not(.com-cabecalho) .painel-anresf .nav{margin-top:16px}
