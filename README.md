@@ -7,7 +7,7 @@ das Séries A e B. Fonte dos dados: ANRESF – Painel de Solvência
 ## Como embedar
 
 Copie o conteúdo de [`embed.html`](embed.html) para o código-fonte da sua página.
-Para abrir direto em "Só curto prazo (passivo circulante)", use [`embed-curto-prazo.html`](embed-curto-prazo.html).
+Para abrir direto em "Só curto prazo", use [`embed-curto-prazo.html`](embed-curto-prazo.html).
 O script ajusta a altura do iframe e, quando o leitor muda de aba ou abre um clube,
 rola a página de volta ao início do painel (importante no celular).
 
