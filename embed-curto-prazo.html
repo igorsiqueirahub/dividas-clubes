@@ -1,0 +1,25 @@
+<!-- Embed alternativo: abre na aba "Dívida total" já em "Só curto prazo (passivo circulante)", Série A.
+     Para abrir na Série B, troque serie=A por serie=B no src. -->
+<iframe class="dividas-clubes"
+  src="https://igorsiqueirahub.github.io/dividas-clubes/#aba=divida&serie=A&medida=c"
+  title="Dívidas dos clubes: só curto prazo (passivo circulante)"
+  allow="clipboard-write" style="width:100%;height:1200px;border:0;display:block" loading="lazy"></iframe>
+<script>
+/* Ajusta a altura do iframe, volta ao topo do painel quando o leitor navega nele
+   e faz o botão "Copiar link" copiar o endereço desta página */
+(function () {
+  if (window.__dividasClubes) return; window.__dividasClubes = true;
+  window.addEventListener('message', function (e) {
+    var d = e.data; if (!d || typeof d.type !== 'string' || d.type.indexOf('dividas-clubes:') !== 0) return;
+    document.querySelectorAll('iframe.dividas-clubes').forEach(function (f) {
+      if (f.contentWindow !== e.source) return;
+      if (d.type === 'dividas-clubes:pronto') f.contentWindow.postMessage({ type: 'dividas-clubes:pagina', url: location.href }, '*');
+      if (d.type === 'dividas-clubes:altura') f.style.height = d.altura + 'px';
+      if (d.type === 'dividas-clubes:rolar') {
+        var alvo = f.getBoundingClientRect().top + window.pageYOffset + d.y;
+        if (Math.abs(window.pageYOffset - alvo) > 4) window.scrollTo({ top: alvo, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+</script>

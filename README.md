@@ -7,10 +7,11 @@ das Séries A e B. Fonte dos dados: ANRESF – Painel de Solvência
 ## Como embedar
 
 Copie o conteúdo de [`embed.html`](embed.html) para o código-fonte da sua página.
+Para abrir direto em "Só curto prazo (passivo circulante)", use [`embed-curto-prazo.html`](embed-curto-prazo.html).
 O script ajusta a altura do iframe e, quando o leitor muda de aba ou abre um clube,
 rola a página de volta ao início do painel (importante no celular).
 
 Parâmetros (opcionais): `?tema=neutro` (visual azul-petróleo no lugar do vermelho),
 `?embed=1` (só abas e tabelas), `&fundo=branco|transparente`, `&cabecalho=1`, `&sobre=1`.
-Aba e série no `#`: `#aba=atrasos&serie=A`, `#aba=divida&serie=B`, `#aba=atrasos&serie=A&clube=Flamengo`.
+Aba e série no `#`: `#aba=atrasos&serie=A`, `#aba=divida&serie=B`, `#aba=divida&serie=A&medida=c` (só curto prazo), `#aba=atrasos&serie=A&clube=Flamengo`.
 
