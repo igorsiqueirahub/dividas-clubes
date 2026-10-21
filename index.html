@@ -6,7 +6,7 @@
 <script>
 /* ?embed=1 só abas+gráficos · &cabecalho=1 · &sobre=1 · &fundo=branco|transparente · aba/série no #: #aba=atrasos&serie=A */
 (function(){var q=new URLSearchParams(location.search),c=document.documentElement.classList;
-if(q.get('embed')==='1')c.add('embed');if(q.get('cabecalho')==='1')c.add('com-cabecalho');if(q.get('sobre')==='1')c.add('com-sobre');
+/* ?embed=1 é aceito, mas mostra a página inteira (links antigos continuam funcionando) */if(q.get('cabecalho')==='1')c.add('com-cabecalho');if(q.get('sobre')==='1')c.add('com-sobre');
 var f=q.get('fundo');if(f)c.add('fundo-'+f);var t=q.get('tema')||'vermelho';if(/^[a-z]+$/.test(t))c.add('tema-'+t);if(window.parent!==window)c.add('em-iframe');})();
 </script>
 <style>html,body{margin:0}

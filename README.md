@@ -12,6 +12,6 @@ O script ajusta a altura do iframe e, quando o leitor muda de aba ou abre um clu
 rola a página de volta ao início do painel (importante no celular).
 
 Parâmetros (opcionais): `?tema=neutro` (visual azul-petróleo no lugar do vermelho),
-`?embed=1` (só abas e tabelas), `&fundo=branco|transparente`, `&cabecalho=1`, `&sobre=1`.
+`?embed=1` (aceito por compatibilidade; mostra a página inteira), `&fundo=branco|transparente`, `&cabecalho=1`, `&sobre=1`.
 Aba e série no `#`: `#aba=atrasos&serie=A`, `#aba=divida&serie=B`, `#aba=divida&serie=A&medida=c` (só curto prazo), `#aba=atrasos&serie=A&clube=Flamengo`.
 
