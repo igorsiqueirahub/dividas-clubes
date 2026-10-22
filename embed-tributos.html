@@ -1,0 +1,23 @@
+<!-- Embed: dívida trabalhista e tributária e impostos em atraso na Série A -->
+<iframe class="dividas-clubes"
+  src="https://igorsiqueirahub.github.io/dividas-clubes/tributos.html"
+  title="Impostos e dívidas trabalhistas: quanto cada clube da Série A deve"
+  style="width:100%;height:3400px;border:0;display:block" loading="lazy"></iframe>
+<script>
+/* Ajusta a altura do iframe ao conteúdo (o mesmo script dos outros embeds; se já houver um na página, não precisa repetir) */
+(function () {
+  if (window.__dividasClubes) return; window.__dividasClubes = true;
+  window.addEventListener('message', function (e) {
+    var d = e.data; if (!d || typeof d.type !== 'string' || d.type.indexOf('dividas-clubes:') !== 0) return;
+    document.querySelectorAll('iframe.dividas-clubes').forEach(function (f) {
+      if (f.contentWindow !== e.source) return;
+      if (d.type === 'dividas-clubes:pronto') f.contentWindow.postMessage({ type: 'dividas-clubes:pagina', url: location.href }, '*');
+      if (d.type === 'dividas-clubes:altura') f.style.height = d.altura + 'px';
+      if (d.type === 'dividas-clubes:rolar') {
+        var alvo = f.getBoundingClientRect().top + window.pageYOffset + d.y;
+        if (Math.abs(window.pageYOffset - alvo) > 4) window.scrollTo({ top: alvo, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+</script>
