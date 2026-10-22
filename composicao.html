@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tipos de dívida na Série A</title>
+<meta name="description" content="Os tipos de dívida que mais pesam no total dos 20 clubes da Série A, segundo o balanço de 2025. Dados declarados à Anresf.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&display=swap" rel="stylesheet">
+<style>
+:root{--vermelho:#CB0003;--vermelho-claro:#FF7366;--tinta:#000;--texto:#1A1A1A;--mudo:#4D4D4D;--fraco:#767676;--linha:#E6E6E6;--cinza:#F2F2F2;--trilho:#EDEDED;--escuro:#1A1A1A;--fundo:#fff}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--fundo)}
+body{font-family:"Figtree",Arial,Helvetica,sans-serif;color:var(--texto);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1136px;margin:0 auto;padding:32px 32px 48px}
+html.em-iframe .wrap{padding:16px 2px 16px}
+html.em-iframe body{border-top:1px solid #E6E6E6;border-bottom:1px solid #E6E6E6}
+html.em-iframe .fonte{border-top:0;padding-top:0}
+h1{font-size:clamp(30px,4.2vw,48px);line-height:1.04;letter-spacing:-.03em;font-weight:800;color:var(--tinta);margin:0 0 14px;text-wrap:balance}
+h1 span{color:var(--vermelho);display:block}
+.lede{font-size:17px;line-height:1.6;margin:0 0 24px;max-width:760px}
+.quadro{background:var(--escuro);color:#fff;border-radius:4px;padding:24px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:20px 32px;align-items:center}
+.quadro .num{font-size:clamp(34px,5vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1;white-space:nowrap}
+.quadro .rot{font-size:15px;line-height:1.45;color:#D6D6D6;margin-top:8px}
+.quadro .pct{font-size:clamp(28px,3.6vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1}
+.quadro .pct small{font-size:15px;font-weight:500;letter-spacing:0;color:#D6D6D6;margin-left:6px}
+.parte{margin-top:12px}
+.parte-barra{display:flex;gap:2px;height:14px}
+.parte-barra i{display:block;height:100%}
+.parte-barra .t{background:var(--vermelho);border-radius:4px 0 0 4px}
+.parte-barra .r{background:#5A5A5A;border-radius:0 4px 4px 0;flex:1}
+.parte-leg{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:#BDBDBD;margin-top:8px}
+.parte-leg b{color:#fff;font-weight:600}
+.secao{margin-top:36px}
+.secao h2{font-size:clamp(22px,2.6vw,28px);letter-spacing:-.02em;line-height:1.15;margin:0 0 6px;color:var(--tinta)}
+.secao .sub{font-size:15px;color:var(--mudo);margin:0 0 16px}
+.ctrl{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px;margin:0 0 14px}
+.ctrl>span{font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--mudo)}
+.seg{display:inline-flex;border:1px solid var(--linha);border-radius:4px;padding:3px;gap:3px;background:#fff;flex-wrap:wrap}
+.seg button{all:unset;cursor:pointer;font:inherit;font-size:14px;font-weight:500;padding:8px 14px;border-radius:4px;color:var(--texto)}
+.seg button[aria-pressed=true]{background:#000;color:#fff;font-weight:600}
+.seg button:focus-visible{outline:2px solid var(--vermelho);outline-offset:2px}
+.rk{list-style:none;margin:0;padding:0;border:1px solid var(--linha);border-radius:4px}
+.rk li{display:grid;grid-template-columns:28px minmax(110px,170px) minmax(0,1fr) 92px 64px;align-items:center;gap:12px;padding:9px 16px;border-top:1px solid var(--linha);position:relative}
+.rk li:first-child{border-top:0}
+.rk li:hover,.rk li:focus-visible,.rk li.on{background:#FAFAFA;outline:0}
+.rk .pos{font-size:13px;color:var(--fraco);font-variant-numeric:tabular-nums}
+.rk .nm{font-weight:700;font-size:15px;color:var(--tinta)}
+.rk .tr{height:14px;background:var(--trilho);border-radius:0 4px 4px 0;position:relative}
+.rk .br{position:absolute;left:0;top:0;bottom:0;background:var(--vermelho);border-radius:0 4px 4px 0;min-width:2px}
+.rk .v{font-weight:700;font-size:15px;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.rk .p{font-size:14px;color:var(--mudo);text-align:right;font-variant-numeric:tabular-nums}
+.rk .pm{display:none}
+.rk li.sem .tr{background:repeating-linear-gradient(135deg,var(--trilho) 0 6px,#fff 6px 10px)}
+.rk li.sem .v,.rk li.sem .p{color:var(--fraco);font-weight:500}
+.cab-rk{display:grid;grid-template-columns:28px minmax(110px,170px) minmax(0,1fr) 92px 64px;gap:12px;padding:0 16px 6px;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--mudo)}
+.cab-rk span:nth-child(4),.cab-rk span:nth-child(5){text-align:right}
+.cab-rk .pc{display:none}
+.tip{position:absolute;top:0;left:0;z-index:5;pointer-events:none;background:#000;color:#fff;font-size:13px;line-height:1.45;padding:10px 12px;border-radius:4px;max-width:260px;box-shadow:0 4px 16px rgba(0,0,0,.18);opacity:0;transition:opacity .1s}
+.tip.on{opacity:1}
+.tip b{display:block;font-size:14px;margin-bottom:2px}
+.nota{font-size:14px;line-height:1.6;color:var(--mudo);margin:14px 0 0;max-width:820px}
+.nota b{color:var(--texto)}
+.fonte{font-size:13px;line-height:1.5;color:var(--mudo);margin:24px 0 0;padding-top:12px;border-top:1px solid var(--linha)}
+.fonte a{color:var(--vermelho)}
+@media (max-width:760px){
+  .wrap{padding:20px 16px 32px}
+  .quadro{grid-template-columns:1fr;padding:20px}
+  .rk li{grid-template-columns:22px minmax(0,1fr) auto 44px;grid-template-areas:"pos nm v p" ". tr tr tr";gap:6px 10px;padding:10px 12px}
+  .rk .pos{grid-area:pos}.rk .nm{grid-area:nm}.rk .v{grid-area:v}.rk .tr{grid-area:tr;height:10px}.rk .p{grid-area:p;font-size:13px}
+  .cab-rk{display:grid;grid-template-columns:22px minmax(0,1fr) auto 44px;padding:0 12px 6px;gap:10px}
+  .cab-rk span:nth-child(3){display:none}
+  .cab-rk .pl{display:none}.cab-rk .pc{display:inline}
+}
+
+.tp{list-style:none;margin:0;padding:0;border:1px solid var(--linha);border-radius:4px}
+.tp li{display:grid;grid-template-columns:34px minmax(0,1fr) 110px 56px;grid-template-areas:"pos nm v p" ". ds ds ds" ". tr tr tr" ". mx mx mx";gap:4px 14px;align-items:center;padding:16px 18px;border-top:1px solid var(--linha);position:relative}
+.tp li:first-child{border-top:0}
+.tp li:hover,.tp li:focus-visible,.tp li.on{background:#FAFAFA;outline:0}
+.tp .pos{grid-area:pos;font-size:15px;font-weight:700;color:var(--vermelho);font-variant-numeric:tabular-nums}
+.tp .nm{grid-area:nm;font-weight:700;font-size:17px;color:var(--tinta);line-height:1.25}
+.tp .v{grid-area:v;font-weight:700;font-size:17px;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tp .p{grid-area:p;font-size:15px;color:var(--mudo);text-align:right;font-variant-numeric:tabular-nums}
+.tp .ds{grid-area:ds;font-size:13.5px;color:var(--mudo);line-height:1.4}
+.tp .tr{grid-area:tr;height:14px;background:var(--trilho);border-radius:0 4px 4px 0;position:relative;margin-top:6px}
+.tp .br{position:absolute;left:0;top:0;bottom:0;background:var(--vermelho);border-radius:0 4px 4px 0;min-width:2px}
+.tp .mx{grid-area:mx;font-size:13.5px;color:var(--mudo);line-height:1.5;margin-top:4px}
+.tp .mx b{color:var(--texto);font-weight:600}
+.tp .cx{white-space:nowrap}
+@media (max-width:760px){
+  .tp li{grid-template-columns:26px minmax(0,1fr) auto 40px;gap:4px 10px;padding:14px 12px}
+  .tp .nm,.tp .v{font-size:16px}.tp .p{font-size:13px}
+}</style></head><body>
+<script>if(window.parent!==window)document.documentElement.classList.add('em-iframe');</script>
+<div class="wrap">
+  <h1><span>Tipos de dívida:</span> o que mais pesa na Série A</h1>
+  <p class="lede">Do que é feita a dívida dos 20 clubes da Série A do Brasileirão, somando todos eles, segundo o balanço de 2025 declarado à Agência Nacional de Regulação e Sustentabilidade do Futebol (Anresf).</p>
+
+  <section class="quadro" aria-label="Total da Série A">
+    <div>
+      <div class="num" id="qTotal"></div>
+      <div class="rot">era a dívida total dos 20 clubes da Série A no fim de 2025</div>
+    </div>
+    <div>
+      <div class="pct" id="qPct"></div>
+      <div class="parte" aria-hidden="true">
+        <div class="parte-barra"><i class="t" id="qBarra"></i><i class="r"></i></div>
+        <div class="parte-leg"><span><b id="qLegT"></b> <span id="qLegTv"></span></span><span>Outros tipos <b id="qLegR"></b></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" aria-labelledby="tpT">
+    <h2 id="tpT">Ranking dos tipos de dívida</h2>
+    <p class="sub">Soma dos 20 clubes da Série A · balanço de 31 de dezembro de 2025 · % da dívida total</p>
+    <ol class="tp" id="tp"></ol>
+    <p class="nota" id="nota"></p>
+  </section>
+
+  <p class="fonte">Fonte: <a href="https://www.anresf.org.br/pilares-do-ssf/solvencia-e-dividas-em-atraso/painel-de-solvencia" target="_blank" rel="noopener">Anresf – Painel de Solvência</a>, balanço de 31/12/2025. Dívida total é o passivo de curto e longo prazo, sem as receitas recebidas antecipadamente (mesmo critério do painel).</p>
+</div>
+<div class="tip" id="tip" role="tooltip"></div>
+<script>
+var TIPOS=[{"k":"trab","nome":"Trabalhistas, impostos e parcelamentos","desc":"salários e encargos, tributos e parcelamentos fiscais","v":5132559.1,"n":20,"top":[["Corinthians",948990],["Fluminense",577962],["Atlético-MG",518146]]},{"k":"trf","nome":"Transferências de atletas","desc":"valores a pagar por transferências de atletas","v":4848100.9,"n":18,"top":[["Botafogo",978895],["Palmeiras",830738],["Flamengo",497311]]},{"k":"out","nome":"Empréstimos e outras dívidas","desc":"empréstimos, financiamentos, recuperação judicial e demais contas","v":4462570.3,"n":19,"top":[["Atlético-MG",1114651],["Cruzeiro",895289],["São Paulo",336430]]},{"k":"prov","nome":"Provisões para processos","desc":"estimativa de perdas em ações judiciais","v":1156529.5,"n":17,"top":[["Corinthians",447259],["Vasco",157647],["Flamengo",72221]]},{"k":"forn","nome":"Fornecedores","desc":"compras e serviços a pagar","v":730409.7,"n":20,"top":[["Corinthians",233476],["Botafogo",73951],["Grêmio",72277]]},{"k":"part","nome":"Partes relacionadas","desc":"dívidas com associação, sócios ou empresas ligadas ao clube","v":679505.9,"n":6,"top":[["RB Bragantino",572857],["Atlético-MG",64462],["Bahia",37222.9]]},{"k":"imag","nome":"Direitos de imagem","desc":"valores a pagar a atletas pelo uso da imagem","v":329977.4,"n":11,"top":[["São Paulo",69112],["Palmeiras",55449],["Corinthians",51830]]}], TT=17339652.9, ANT=4736353.8; /* valores em R$ mil */
+(function(){
+  function fmt(mil){var v=mil/1000;if(v>=1000)return 'R$ '+(v/1000).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})+' bi';
+    if(v>=10)return 'R$ '+Math.round(v).toLocaleString('pt-BR')+' mi';return 'R$ '+v.toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1})+' mi';}
+  function pct(x){return x>0&&x<.01?'<1%':Math.round(100*x)+'%';}
+  var top3=TIPOS.slice(0,3).reduce(function(s,t){return s+t.v;},0);
+  document.getElementById('qTotal').textContent=fmt(TT);
+  document.getElementById('qPct').innerHTML=pct(top3/TT)+'<small>estão em três tipos de dívida</small>';
+  document.getElementById('qBarra').style.width=(100*top3/TT)+'%';
+  document.getElementById('qLegT').textContent='3 maiores';
+  document.getElementById('qLegTv').textContent=fmt(top3);
+  document.getElementById('qLegR').textContent=fmt(TT-top3);
+  document.getElementById('nota').innerHTML='Ficam fora da conta <b>'+fmt(ANT)+'</b> em receitas recebidas antecipadamente (adiantamentos de patrocínio, direitos de TV e outros contratos), que são receita a cumprir, não dinheiro a pagar. '+
+    '“Empréstimos e outras dívidas” junta financiamentos, dívidas da recuperação judicial e contas que os clubes não detalham.';
+  var tp=document.getElementById('tp'),tip=document.getElementById('tip'),max=TIPOS[0].v;
+  tp.innerHTML=TIPOS.map(function(t,i){
+    return '<li tabindex="0" data-i="'+i+'" aria-label="'+(i+1)+'º, '+t.nome+': '+fmt(t.v)+', '+pct(t.v/TT)+' da dívida total da Série A">'+
+      '<span class="pos">'+(i+1)+'º</span><span class="nm">'+t.nome+'</span><span class="v">'+fmt(t.v)+'</span><span class="p">'+pct(t.v/TT)+'</span>'+
+      '<span class="ds">'+t.desc+'</span>'+
+      '<span class="tr" aria-hidden="true"><span class="br" style="width:'+(100*t.v/max).toFixed(2)+'%"></span></span>'+
+      '<span class="mx"><b>Maiores:</b> '+t.top.map(function(c){return '<span class="cx">'+c[0]+' '+fmt(c[1])+'</span>';}).join(' · ')+'</span></li>';}).join('');
+  function mostra(li){var t=TIPOS[+li.dataset.i];[].forEach.call(tp.children,function(x){x.classList.toggle('on',x===li);});
+    tip.innerHTML='<b>'+t.nome+'</b>'+fmt(t.v)+' · '+pct(t.v/TT)+' da dívida total da Série A<br>Aparece no balanço de '+t.n+' dos 20 clubes';
+    var r=li.getBoundingClientRect(),tw=Math.min(280,innerWidth-32);tip.style.maxWidth=tw+'px';tip.classList.add('on');
+    var x=Math.min(Math.max(16,r.left+r.width/2-tip.offsetWidth/2),innerWidth-tip.offsetWidth-16);
+    var y=r.top+scrollY-tip.offsetHeight-6;if(y<scrollY+4)y=r.bottom+scrollY+6;
+    tip.style.left=x+'px';tip.style.top=y+'px';}
+  function esconde(){tip.classList.remove('on');[].forEach.call(tp.children,function(x){x.classList.remove('on');});}
+  tp.addEventListener('mouseover',function(e){var li=e.target.closest('li');if(li)mostra(li);});
+  tp.addEventListener('mouseleave',esconde);
+  tp.addEventListener('focusin',function(e){var li=e.target.closest('li');if(li)mostra(li);});
+  tp.addEventListener('focusout',esconde);
+  tp.addEventListener('click',function(e){var li=e.target.closest('li');if(li){if(li.classList.contains('on')&&e.pointerType!=='mouse')esconde();else mostra(li);}});
+  document.addEventListener('click',function(e){if(!e.target.closest('#tp'))esconde();});
+  /* altura automática no iframe (mesmo protocolo dos outros embeds) */
+  if(window.parent!==window){var last=0;function send(){var h=Math.ceil(document.documentElement.getBoundingClientRect().height);
+    if(h!==last){last=h;parent.postMessage({type:'dividas-clubes:altura',altura:h},'*');}}
+    new ResizeObserver(send).observe(document.documentElement);addEventListener('load',send);setInterval(send,1000);}
+})();
+</script>
+</body></html>

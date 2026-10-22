@@ -10,6 +10,7 @@ Copie o conteúdo de [`embed.html`](embed.html) para o código-fonte da sua pág
 Para abrir direto em "Só curto prazo", use [`embed-curto-prazo.html`](embed-curto-prazo.html).
 Ranking da dívida com transferências de atletas na Série A: [`transferencias.html`](transferencias.html), embed em [`embed-transferencias.html`](embed-transferencias.html).
 Impostos e dívidas trabalhistas na Série A, com a lista de impostos em atraso: [`tributos.html`](tributos.html), embed em [`embed-tributos.html`](embed-tributos.html).
+Ranking dos tipos de dívida na Série A (soma dos 20 clubes): [`composicao.html`](composicao.html), embed em [`embed-composicao.html`](embed-composicao.html).
 O script ajusta a altura do iframe e, quando o leitor muda de aba ou abre um clube,
 rola a página de volta ao início do painel (importante no celular).
 
