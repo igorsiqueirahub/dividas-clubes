@@ -207,7 +207,8 @@ var TIPOS=[{"k":"trab","nome":"Trabalhistas, impostos e parcelamentos","desc":"s
     desenhaRk();vTipos.hidden=true;vDet.hidden=false;}
   function topo(el){ /* leva o leitor ao início da visão aberta (ranking do tipo ou lista de tipos) */
     var y=el?Math.max(0,el.getBoundingClientRect().top+scrollY-8):0;
-    if(emIframe)parent.postMessage({type:'dividas-clubes:rolar',y:y},'*');else scrollTo(0,y);}
+    scrollTo(0,y); /* quando o quadro tem altura fixa (sem o script na página), rola por dentro */
+    if(emIframe)parent.postMessage({type:'dividas-clubes:rolar',y:y},'*');}
   var calma=0; /* ignora o toque/cursor que sobra logo depois de trocar de visão */
   function rota(rolar){esconde();calma=Date.now()+800;var m=/tipo=([a-z]+)/.exec(location.hash);abre(m?m[1]:null);
     if(rolar){topo(atual?vDet:null);(atual?document.getElementById('dNome'):document.getElementById('tpT')).focus({preventScroll:true});}}
