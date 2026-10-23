@@ -4,7 +4,7 @@
 <meta name="description" content="Os seis clubes da Série A que não declararam à Anresf nenhum atraso com salários, transferências ou impostos em 2026, e como os outros 14 se saíram em cada item.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&display=swap" rel="stylesheet">
 <style>
-:root{--vermelho:#CB0003;--verde:#0B7A3B;--verde-claro:#4CC57E;--verde-bg:#E8F5EC;--tinta:#000;--texto:#1A1A1A;--mudo:#4D4D4D;--fraco:#767676;--linha:#E6E6E6;--cinza:#F2F2F2;--trilho:#EDEDED;--escuro:#1A1A1A;--fundo:#fff}
+:root{--vermelho:#CB0003;--vermelho-bg:#FCEBEB;--verde:#0B7A3B;--verde-bg:#E8F5EC;--tinta:#000;--texto:#1A1A1A;--mudo:#4D4D4D;--fraco:#767676;--linha:#E6E6E6;--escuro:#1A1A1A;--fundo:#fff}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 html,body{margin:0;background:var(--fundo)}
@@ -17,118 +17,93 @@ html.em-iframe{height:100%}
 html.em-iframe body{min-height:100%;display:flex;flex-direction:column}
 html.em-iframe .wrap{flex:1 0 auto;display:flex;flex-direction:column;width:100%}
 html.em-iframe .fonte{margin-top:auto;padding-top:12px}
-h1{font-size:clamp(30px,4.2vw,48px);line-height:1.04;letter-spacing:-.03em;font-weight:800;color:var(--tinta);margin:0 0 14px;text-wrap:balance}
+h1{font-size:clamp(28px,4.2vw,48px);line-height:1.04;letter-spacing:-.03em;font-weight:800;color:var(--tinta);margin:0 0 12px;text-wrap:balance}
 h1 span{color:var(--vermelho);display:block}
-.lede{font-size:17px;line-height:1.6;margin:0 0 24px;max-width:760px}
-.quadro{background:var(--escuro);color:#fff;border-radius:4px;padding:24px;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:20px 32px;align-items:center}
-.quadro .num{font-size:clamp(44px,6vw,64px);font-weight:800;letter-spacing:-.03em;line-height:1;white-space:nowrap}
-.quadro .num small{font-size:.5em;font-weight:700;color:#BDBDBD;letter-spacing:-.01em}
-.quadro .rot{font-size:15px;line-height:1.45;color:#D6D6D6;margin-top:8px}
-.mapa{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
-.mapa li{font-size:13px;font-weight:600;line-height:1;padding:8px 10px;border-radius:4px;background:#2E2E2E;color:#9A9A9A;white-space:nowrap}
-.mapa li.ok{background:var(--verde);color:#fff}
-.mapa li.rj{background:transparent;color:#BDBDBD;box-shadow:inset 0 0 0 1px #5A5A5A}
-.mapa-leg{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:#BDBDBD;margin-top:12px}
-.mapa-leg span{display:inline-flex;align-items:center;gap:6px}
-.mapa-leg i{display:inline-block;width:12px;height:12px;border-radius:3px;background:#2E2E2E}
-.mapa-leg i.ok{background:var(--verde)}
-.mapa-leg i.rj{background:transparent;box-shadow:inset 0 0 0 1px #5A5A5A}
-.secao{margin-top:36px}
-.secao h2{font-size:clamp(22px,2.6vw,28px);letter-spacing:-.02em;line-height:1.15;margin:0 0 6px;color:var(--tinta)}
-.secao .sub{font-size:15px;line-height:1.5;color:var(--mudo);margin:0 0 16px;max-width:820px}
+.lede{font-size:17px;line-height:1.55;margin:0 0 18px;max-width:760px}
+.faixa{background:var(--escuro);color:#fff;border-radius:4px;padding:16px 20px;display:flex;align-items:center;gap:16px;margin:0 0 20px}
+.faixa .num{font-size:clamp(40px,6vw,56px);font-weight:800;letter-spacing:-.03em;line-height:1;white-space:nowrap}
+.faixa .num small{font-size:.5em;font-weight:700;color:#BDBDBD}
+.faixa p{margin:0;font-size:15px;line-height:1.4;color:#D6D6D6}
+.faixa p b{color:#fff}
 svg.ck{width:14px;height:14px;flex:none}
-/* tabela dos seis */
-.tab{width:100%;border-collapse:collapse;border:1px solid var(--linha);font-size:14px}
-.tab th,.tab td{padding:12px 14px;border-top:1px solid var(--linha);text-align:left;vertical-align:middle}
-.tab thead th{border-top:0;background:#FAFAFA;font-weight:700;color:var(--tinta);font-size:15px;vertical-align:bottom}
-.tab thead th small{display:block;font-size:13px;font-weight:500;color:var(--mudo);margin-top:2px}
-.tab tbody th{font-size:16px;font-weight:700;color:var(--tinta);white-space:nowrap}
-.tab td{width:27%}
-.par{display:flex;flex-wrap:wrap;gap:6px}
-.pil{display:inline-flex;align-items:center;gap:5px;background:var(--verde-bg);color:var(--verde);font-weight:600;font-size:13px;line-height:1;padding:6px 8px;border-radius:4px;white-space:nowrap}
-.cm{display:none}
-/* barras por item */
-.itens{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.item{border:1px solid var(--linha);border-radius:4px;padding:16px;display:flex;flex-direction:column;gap:10px}
-.item h3{margin:0;font-size:18px;color:var(--tinta)}
-.item h3 small{display:block;font-size:13px;font-weight:500;color:var(--mudo);margin-top:2px}
-.item .cont{font-size:15px;line-height:1.4;margin:0}
-.item .cont b{font-size:28px;font-weight:800;letter-spacing:-.02em;color:var(--verde);margin-right:4px}
-.vinte{display:grid;grid-template-columns:repeat(20,minmax(0,1fr));gap:2px;height:16px}
-.vinte i{display:block;background:#D9D9D9;border-radius:2px}
-.vinte i.ok{background:var(--verde)}
-.vinte i.rj{background:#fff;box-shadow:inset 0 0 0 1px #9A9A9A}
-.vinte i.at{background:var(--vermelho)}
-.item .ql{font-size:14px;line-height:1.5;color:var(--mudo);margin:0}
-.item .ql b{color:var(--texto)}
-.leg{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--mudo);margin:0 0 12px}
-.leg span{display:inline-flex;align-items:center;gap:6px}
-.leg i{display:inline-block;width:12px;height:12px;border-radius:2px}
-/* quase */
-.quase{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.quase li{border:1px solid var(--linha);border-left:4px solid var(--vermelho);border-radius:4px;padding:14px 16px;font-size:15px;line-height:1.5}
-.quase li b{display:block;font-size:17px;color:var(--tinta);margin-bottom:2px}
-.nota{font-size:14px;line-height:1.6;color:var(--mudo);margin:14px 0 0;max-width:820px}
+.leg{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;line-height:1.3;color:var(--mudo);margin:0 0 10px}
+.leg>span{display:inline-flex;align-items:center;gap:6px}
+.leg i{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:3px;flex:none}
+/* matriz */
+.mx{width:100%;border-collapse:collapse;font-size:14px;table-layout:fixed}
+.mx col.c{width:24%}
+.mx th,.mx td{padding:0 8px;height:34px;border-top:1px solid var(--linha);text-align:left;vertical-align:middle}
+.mx thead th{border-top:0;height:auto;padding:0 8px 8px;font-size:13px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;color:var(--mudo);vertical-align:bottom}
+.mx thead th small{display:block;font-size:12px;font-weight:500;text-transform:none;letter-spacing:0;color:var(--fraco)}
+.mx tbody th{font-weight:600;color:var(--tinta);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mx tr.g th{height:auto;padding:14px 8px 6px;border-top:0;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--mudo);white-space:normal}
+.mx tbody.seis tr.g th{color:var(--verde)}
+.mx tbody.seis tr:not(.g) th,.mx tbody.seis tr:not(.g) td{background:var(--verde-bg);border-top-color:#fff}
+.mx tbody.seis tr:not(.g) th{font-weight:800;font-size:15px}
+.s{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;line-height:1.15}
+.s.ok{color:var(--verde)}
+.s.rj{color:var(--fraco)}
+.s.rj i{width:12px;height:12px;border-radius:50%;box-shadow:inset 0 0 0 1.5px #9A9A9A;flex:none}
+.s.at{color:var(--vermelho)}
+.s.at i{width:12px;height:12px;border-radius:2px;background:var(--vermelho);flex:none}
+.mx tfoot td,.mx tfoot th{border-top:2px solid var(--tinta);height:auto;padding:8px;font-size:13px;color:var(--mudo);vertical-align:top}
+.mx tfoot b{display:block;font-size:20px;font-weight:800;color:var(--verde);line-height:1.1}
+.nota{font-size:14px;line-height:1.55;color:var(--mudo);margin:14px 0 0;max-width:820px}
 .nota b{color:var(--texto)}
-.fonte{font-size:13px;line-height:1.5;color:var(--mudo);margin:24px 0 0;padding-top:12px;border-top:1px solid var(--linha)}
+.fonte{font-size:13px;line-height:1.5;color:var(--mudo);margin:20px 0 0;padding-top:12px;border-top:1px solid var(--linha)}
 .fonte a{color:var(--vermelho)}
-@media (max-width:900px){.itens{grid-template-columns:1fr}}
-@media (max-width:760px){
-  .wrap{padding:20px 16px 32px}
-  .quadro{grid-template-columns:1fr;padding:20px}
-  .quase{grid-template-columns:1fr}
-}
-@media (max-width:620px){
-  .tab thead th small{display:none}
-  .tab th,.tab td{padding:10px 8px}
-  .tab tbody th{font-size:15px;white-space:normal}
-  .par{flex-direction:column;gap:4px}
-  .pil{font-size:12px;padding:5px 6px}
+.cm,.cx{display:none}
+@media (min-width:761px){.corpo{max-width:820px}}
+@media (max-width:760px){.wrap{padding:20px 16px 32px}}
+@media (max-width:520px){
+  .lede{font-size:16px}
+  .faixa{padding:14px 16px;gap:14px}
+  .faixa p{font-size:14px}
+  .mx{font-size:13px}
+  .mx col.c{width:22%}
+  .mx tbody th{white-space:normal;line-height:1.1;overflow:visible}
+  .mx th,.mx td{padding:0 4px}
+  .mx thead th{padding:0 4px 6px;font-size:11px;letter-spacing:0}
+  .mx thead th small{display:none}
+  .mx tbody.seis tr:not(.g) th{font-size:14px}
+  .mx tr.g th{padding:12px 4px 5px}
+  .mx tfoot td,.mx tfoot th{padding:6px 4px;font-size:11px}
+  .mx tfoot b{font-size:17px}
+  .s{font-size:11px;gap:4px}
   .cl{display:none}.cm{display:inline}
+}
+@media (max-width:300px){
+  .mx{font-size:12px}
+  .mx col.c{width:20%}
+  .mx tbody.seis tr:not(.g) th{font-size:13px}
+  .mx thead th{font-size:10px}
+  .s{font-size:10px;gap:3px}
+  .s.at i,.s.rj i{width:10px;height:10px}
+  .cm{display:none}.cx{display:inline}
 }
 </style></head><body>
 <script>if(window.parent!==window)document.documentElement.classList.add('em-iframe');</script>
-<div class="wrap">
+<div class="wrap"><div class="corpo">
   <h1><span>Contas em dia:</span> os seis clubes da Série A sem atrasos</h1>
-  <p class="lede">Bahia, Chapecoense, Flamengo, Mirassol, Palmeiras e RB Bragantino foram os únicos clubes da Série A do Brasileirão que não declararam nenhuma dívida vencida e não paga à Agência Nacional de Regulação e Sustentabilidade do Futebol (Anresf) na declaração de julho de 2026: nem com salários, nem com transferências, nem com impostos.</p>
+  <p class="lede">Só seis dos 20 clubes da Série A não declararam nenhuma dívida vencida e não paga à Agência Nacional de Regulação e Sustentabilidade do Futebol (Anresf) na declaração de julho de 2026.</p>
 
-  <section class="quadro" aria-label="Clubes da Série A sem atrasos">
-    <div>
-      <div class="num">6 <small>de 20</small></div>
-      <div class="rot">clubes da Série A estavam sem nenhuma parcela em atraso em 30 de junho de 2026</div>
-    </div>
-    <div>
-      <ul class="mapa" id="mapa"></ul>
-      <div class="mapa-leg" aria-hidden="true"><span><i class="ok"></i>Sem atrasos</span><span><i class="rj"></i>Sem atraso fora da recuperação judicial</span><span><i></i>Com algum atraso</span></div>
-    </div>
-  </section>
+  <div class="faixa"><div class="num">6 <small>de 20</small></div>
+    <p>sem atraso com <b>salários</b>, <b>transferências</b> e <b>impostos</b>, nem em dívidas antigas nem nas feitas em 2026</p></div>
 
-  <section class="secao" aria-labelledby="tabT">
-    <h2 id="tabT">Em dia nas três frentes</h2>
-    <p class="sub">O que cada clube declarou sobre os três grupos de credores acompanhados pela Anresf, tanto nas dívidas anteriores a 2026 quanto nas feitas a partir de 2026</p>
-    <table class="tab">
-      <thead><tr><th scope="col">Clube</th>
-        <th scope="col">Salários<small>atletas e funcionários</small></th>
-        <th scope="col">Transferências<small>outros clubes e atletas</small></th>
-        <th scope="col">Impostos<small>poder público</small></th></tr></thead>
-      <tbody id="tab"></tbody>
-    </table>
-  </section>
-
-  <section class="secao" aria-labelledby="itT">
-    <h2 id="itT">Item por item, quem mais estava em dia</h2>
-    <p class="sub">Os 20 clubes da Série A em cada um dos três grupos de credores. Só os seis aparecem em verde nos três.</p>
-    <div class="leg" aria-hidden="true"><span><i style="background:var(--verde)"></i>Sem atraso</span><span><i style="background:#fff;box-shadow:inset 0 0 0 1px #9A9A9A"></i>Sem atraso fora da recuperação judicial ou do plano de credores</span><span><i style="background:var(--vermelho)"></i>Com atraso</span></div>
-    <div class="itens" id="itens"></div>
-  </section>
-
-  <section class="secao" aria-labelledby="qT">
-    <h2 id="qT">Ficaram de fora por um item</h2>
-    <p class="sub">Clubes que só tinham atraso com um dos três grupos de credores</p>
-    <ul class="quase" id="quase"></ul>
-    <p class="nota" id="nota"></p>
-  </section>
-
+  <div class="leg" aria-hidden="true">
+    <span><i style="color:var(--verde)" id="lgOk"></i>Sem atraso</span>
+    <span><i><span class="s at" style="display:contents"><i></i></span></i><span>Com atraso em dívidas antigas, de 2026 ou ambas<span class="cx"> (Ant., 2026, Amb.)</span></span></span>
+    <span><i><span class="s rj" style="display:contents"><i></i></span></i>Sem atraso fora da recuperação judicial ou do plano de credores</span>
+  </div>
+  <table class="mx" id="mx">
+    <colgroup><col><col class="c"><col class="c"><col class="c"></colgroup>
+    <thead><tr><th scope="col">Clube</th>
+      <th scope="col"><span class="cl">Salários</span><span class="cm">Salários</span><span class="cx">Salár.</span><small>atletas e funcionários</small></th>
+      <th scope="col"><span class="cl">Transferências</span><span class="cm">Transf.</span><span class="cx">Transf.</span><small>outros clubes e atletas</small></th>
+      <th scope="col"><span class="cl">Impostos</span><span class="cm">Impostos</span><span class="cx">Impost.</span><small>poder público</small></th></tr></thead>
+  </table>
+  <p class="nota" id="nota"></p>
+</div>
   <p class="fonte">Fonte: <a href="https://www.anresf.org.br/pilares-do-ssf/solvencia-e-dividas-em-atraso/painel-de-solvencia" target="_blank" rel="noopener">Anresf – Painel de Solvência</a>. Declaração do ciclo de julho de 2026, com as parcelas vencidas até 30/6/2026.</p>
 </div>
 <script>
@@ -141,48 +116,35 @@ var SERIE_A={"Athletico-PR":{v:[0,1,0],n:[0,0,0]},"Atlético-MG":{v:[1,1,1],n:[0
   "Mirassol":{v:[0,0,0],n:[0,0,0]},"Palmeiras":{v:[0,0,0],n:[0,0,0]},"RB Bragantino":{v:[0,0,0],n:[0,0,0]},"Remo":{v:[0,0,0],n:[0,0,1]},
   "Santos":{v:[1,0,0],n:[1,0,1],p:1},"São Paulo":{v:[1,1,0],n:[0,1,0]},"Vasco":{v:[0,0,1],n:[0,0,1],p:1},"Vitória":{v:[1,1,1],n:[0,1,1],p:1}};
 (function(){
-  var ITENS=[{n:'Salários',d:'atletas e funcionários',x:'salários'},{n:'Transferências',d:'outros clubes e atletas com percentual',x:'transferências'},{n:'Impostos',d:'poder público',x:'impostos'}];
+  var ITENS=['salários','transferências','impostos'];
   var CK='<svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5l5 5L19.5 7"/></svg>';
+  document.getElementById('lgOk').innerHTML=CK;
   var nomes=Object.keys(SERIE_A).sort(function(a,b){return a.localeCompare(b,'pt');});
   /* situação num item: ok, rj (sem atraso fora do processo; o processo não abrange impostos) ou at */
   function sit(c,i){var x=SERIE_A[c];if(x.v[i]||x.n[i])return 'at';return x.p&&i<2?'rj':'ok';}
-  function emDia(c){return [0,1,2].every(function(i){return sit(c,i)==='ok';});}
+  function nAt(c){return [0,1,2].filter(function(i){return sit(c,i)==='at';}).length;}
   function lista(a){return a.length>1?a.slice(0,-1).join(', ')+' e '+a[a.length-1]:a[0]||'';}
-  var seis=nomes.filter(emDia),rj=nomes.filter(function(c){return !emDia(c)&&[0,1,2].every(function(i){return sit(c,i)!=='at';});}),
-      outros=nomes.filter(function(c){return seis.indexOf(c)<0&&rj.indexOf(c)<0;});
-  document.getElementById('mapa').innerHTML=seis.map(function(c){return '<li class="ok">'+c+'</li>';}).join('')+
-    rj.map(function(c){return '<li class="rj">'+c+'</li>';}).join('')+outros.map(function(c){return '<li>'+c+'</li>';}).join('');
-  document.getElementById('mapa').setAttribute('aria-label','Sem atrasos: '+lista(seis)+'. Sem atraso fora da recuperação judicial: '+lista(rj)+'. Com algum atraso: os outros '+outros.length+'.');
-
-  var pil='<span class="par"><span class="pil">'+CK+'<span class="cl">Dívidas antigas</span><span class="cm">Antigas</span></span><span class="pil">'+CK+'<span class="cl">Dívidas de 2026</span><span class="cm">2026</span></span></span>';
-  document.getElementById('tab').innerHTML=seis.map(function(c){
-    return '<tr><th scope="row">'+c+'</th>'+ITENS.map(function(it){return '<td aria-label="'+it.n+': sem atraso em dívidas antigas nem de 2026">'+pil+'</td>';}).join('')+'</tr>';}).join('');
-
-  document.getElementById('itens').innerHTML=ITENS.map(function(it,i){
-    var ok=nomes.filter(function(c){return sit(c,i)==='ok';}),r=nomes.filter(function(c){return sit(c,i)==='rj';}),at=nomes.filter(function(c){return sit(c,i)==='at';});
-    var alem=ok.filter(function(c){return seis.indexOf(c)<0;});
-    var cells=ok.map(function(){return '<i class="ok"></i>';}).concat(r.map(function(){return '<i class="rj"></i>';}),at.map(function(){return '<i class="at"></i>';})).join('');
-    return '<div class="item"><h3>'+it.n+'<small>'+it.d+'</small></h3>'+
-      '<p class="cont"><b>'+ok.length+'</b>de 20 sem atraso</p>'+
-      '<div class="vinte" role="img" aria-label="'+ok.length+' sem atraso, '+r.length+' sem atraso fora do processo, '+at.length+' com atraso"> '+cells+'</div>'+
-      '<p class="ql">'+(alem.length?'Além dos seis: <b>'+lista(alem)+'</b>.':'Só os seis.')+
-      (r.length?' Sem atraso fora do processo: '+lista(r)+'.':'')+' Com atraso: '+at.length+' clubes.</p></div>';}).join('');
-
-  /* clubes com atraso em um só item, fora de recuperação judicial ou plano de credores */
-  var quase=nomes.filter(function(c){var x=SERIE_A[c];return !x.p&&[0,1,2].filter(function(i){return sit(c,i)==='at';}).length===1;});
-  document.getElementById('quase').innerHTML=quase.map(function(c){var x=SERIE_A[c],i=[0,1,2].filter(function(i){return sit(c,i)==='at';})[0];
-    var quando=x.v[i]&&x.n[i]?'dívidas antigas e de 2026':x.v[i]?'dívidas anteriores a 2026':'dívidas feitas em 2026';
-    var em=[0,1,2].filter(function(j){return j!==i;}).map(function(j){return ITENS[j].x;});
-    return '<li><b>'+c+'</b>Em dia com '+em.join(' e ')+'; atraso com '+ITENS[i].x+' ('+quando+').</li>';}).join('');
-  var proc=rj.concat(nomes.filter(function(c){var x=SERIE_A[c];return x.p&&rj.indexOf(c)<0&&sit(c,0)!=='at'&&sit(c,1)!=='at';}));
-  var semNada=proc.filter(function(c){return sit(c,2)!=='at';}),soImp=proc.filter(function(c){return sit(c,2)==='at';});
-  document.getElementById('nota').innerHTML='<b>Recuperação judicial e plano de credores:</b> '+
-    (semNada.length?'<b>'+lista(semNada)+'</b> não '+(semNada.length>1?'declararam':'declarou')+' nenhum atraso'+(soImp.length?'; ':'. '):'')+
-    (soImp.length?'<b>'+lista(soImp)+'</b> só '+(soImp.length>1?'tinham':'tinha')+' atraso com impostos. ':'')+
-    'Em '+(proc.length>1?'todos esses casos':'ambos')+', as dívidas antigas com atletas, funcionários e outros clubes estão no processo e aparecem como renegociadas, por isso '+(semNada.length>1?'esses clubes não entram':'o '+(semNada[0]||'clube')+' não entra')+' na lista dos que estão em dia. '+
-    '<b>O que conta como atraso:</b> parcela vencida e não paga em 30 de junho de 2026. Dívidas discutidas na Justiça, com acordo formal ou renegociadas com as novas parcelas em dia não entram.';
+  function cel(c,i){var x=SERIE_A[c],s=sit(c,i);
+    if(s==='ok')return '<td><span class="s ok">'+CK+'<span class="cl">Em dia</span></span></td>';
+    if(s==='rj')return '<td><span class="s rj"><i></i><span class="cl">No processo</span><span class="cm">Proc.</span><span class="cx">Proc.</span></span></td>';
+    var q=x.v[i]&&x.n[i]?['Antigas e 2026','Ambas','Amb.']:x.v[i]?['Antigas','Antigas','Ant.']:['De 2026','2026','2026'];
+    return '<td><span class="s at"><i></i><span class="cl">'+q[0]+'</span><span class="cm">'+q[1]+'</span><span class="cx">'+q[2]+'</span></span></td>';}
+  function rot(c){var x=SERIE_A[c];return c+': '+ITENS.map(function(it,i){var s=sit(c,i);
+    return it+' '+(s==='ok'?'sem atraso':s==='rj'?'sem atraso fora do processo':'com atraso em '+(x.v[i]&&x.n[i]?'dívidas antigas e de 2026':x.v[i]?'dívidas antigas':'dívidas de 2026'));}).join('; ');}
+  var seis=nomes.filter(function(c){return nAt(c)===0&&!SERIE_A[c].p;}),proc=nomes.filter(function(c){return nAt(c)===0&&SERIE_A[c].p;});
+  var grupos=[['seis','Em dia nos três itens',seis],['','Sem atraso fora da recuperação judicial',proc]];
+  [1,2,3].forEach(function(k){grupos.push(['',(k===3?'Atraso nos três itens':'Atraso em '+(k===1?'um item':'dois itens')),nomes.filter(function(c){return nAt(c)===k;})]);});
+  var html=grupos.filter(function(g){return g[2].length;}).map(function(g){
+    return '<tbody'+(g[0]?' class="'+g[0]+'"':'')+'><tr class="g"><th colspan="4" scope="colgroup">'+g[1]+' ('+g[2].length+')</th></tr>'+
+      g[2].map(function(c){return '<tr aria-label="'+rot(c)+'"><th scope="row">'+c+'</th>'+[0,1,2].map(function(i){return cel(c,i);}).join('')+'</tr>';}).join('')+'</tbody>';}).join('');
+  var tot=[0,1,2].map(function(i){return nomes.filter(function(c){return sit(c,i)==='ok';}).length;});
+  html+='<tfoot><tr><th scope="row">Sem atraso</th>'+tot.map(function(t){return '<td><b>'+t+'</b>de 20</td>';}).join('')+'</tr></tfoot>';
+  document.getElementById('mx').insertAdjacentHTML('beforeend',html);
+  document.getElementById('nota').innerHTML='<b>O que conta como atraso:</b> parcela vencida e não paga em 30 de junho de 2026. Dívidas discutidas na Justiça, com acordo formal ou renegociadas com as novas parcelas em dia não entram. '+
+    '<b>Recuperação judicial e plano de credores:</b> as dívidas antigas com atletas, funcionários e outros clubes incluídas no processo aparecem como renegociadas. O processo não abrange impostos. '+
+    (proc.length?'Por isso '+(proc.length>1?'os clubes '+lista(proc)+', sem nenhum atraso declarado, não entram':'o '+proc[0]+', sem nenhum atraso declarado, não entra')+' na lista dos que estão em dia.':'');
   /* altura automática no iframe (mesmo protocolo do painel principal) */
-  if(window.parent!==window){var last=0;function send(){var fo=document.querySelector('.fonte'),sec=document.querySelectorAll('.secao'),h=Math.ceil(sec[sec.length-1].getBoundingClientRect().bottom+scrollY+fo.offsetHeight+5); /* conteúdo + fonte + 4 px de respiro + fio */
+  if(window.parent!==window){var last=0;function send(){var fo=document.querySelector('.fonte'),h=Math.ceil(document.querySelector('.corpo').getBoundingClientRect().bottom+scrollY+fo.offsetHeight+5); /* conteúdo + fonte + 4 px de respiro + fio */
     if(h!==last){last=h;parent.postMessage({type:'dividas-clubes:altura',altura:h},'*');}}
     new ResizeObserver(send).observe(document.querySelector('.wrap'));addEventListener('load',send);setInterval(send,1000);}
 })();

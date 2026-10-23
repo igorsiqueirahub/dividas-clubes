@@ -11,7 +11,7 @@ Para abrir direto em "Só curto prazo", use [`embed-curto-prazo.html`](embed-cur
 Ranking da dívida com transferências de atletas na Série A: [`transferencias.html`](transferencias.html), embed em [`embed-transferencias.html`](embed-transferencias.html).
 Impostos e dívidas trabalhistas na Série A, com a lista de impostos em atraso: [`tributos.html`](tributos.html), embed em [`embed-tributos.html`](embed-tributos.html).
 Ranking dos tipos de dívida na Série A (soma dos 20 clubes): [`composicao.html`](composicao.html), embed em [`embed-composicao.html`](embed-composicao.html).
-Os seis clubes da Série A sem atrasos em 2026, item por item (salários, transferências e impostos): [`em-dia.html`](em-dia.html), embed em [`embed-em-dia.html`](embed-em-dia.html).
+Os seis clubes da Série A sem atrasos em 2026, numa tabela com os 20 clubes item por item (salários, transferências e impostos): [`em-dia.html`](em-dia.html), embed em [`embed-em-dia.html`](embed-em-dia.html).
 O script ajusta a altura do iframe e, quando o leitor muda de aba ou abre um clube,
 rola a página de volta ao início do painel (importante no celular).
 
