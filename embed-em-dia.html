@@ -1,0 +1,25 @@
+<!-- Embed: os seis clubes da Série A sem atrasos na declaração de julho de 2026 à Anresf, com dívida total e ativo do balanço de 2025.
+     A altura no style já acompanha a largura da tela, para funcionar mesmo em editores que não rodam o <script>.
+     O margin-bottom de -32px anula a margem de 32 px dos parágrafos do UOL; em outro site, ajuste para a margem dele. -->
+<iframe class="dividas-clubes"
+  src="https://igorsiqueirahub.github.io/dividas-clubes/em-dia.html"
+  title="Contas em dia: os seis clubes da Série A sem atrasos"
+  style="width:100%;height:calc(1600px + min(15px, max(0px, ((324px - 100vw) * 15))) + min(43px, max(0px, ((329px - 100vw) * 43))) + min(35px, max(0px, ((345px - 100vw) * 35))) + min(23px, max(0px, ((350px - 100vw) * 23))) + min(25px, max(0px, ((353px - 100vw) * 25))) + min(19px, max(0px, ((354px - 100vw) * 19))) + min(28px, max(0px, ((356px - 100vw) * 28))) + min(21px, max(0px, ((358px - 100vw) * 21))) + min(42px, max(0px, ((361px - 100vw) * 42))) + min(42px, max(0px, ((363px - 100vw) * 42))) + min(22px, max(0px, ((371px - 100vw) * 22))) + min(35px, max(0px, ((394px - 100vw) * 35))) + min(55px, max(0px, ((396px - 100vw) * 55))) + min(22px, max(0px, ((400px - 100vw) * 22))) + min(27px, max(0px, ((413px - 100vw) * 27))) + min(20px, max(0px, ((419px - 100vw) * 20))) + min(22px, max(0px, ((428px - 100vw) * 22))) + min(21px, max(0px, ((430px - 100vw) * 21))) + min(35px, max(0px, ((442px - 100vw) * 35))) + min(23px, max(0px, ((449px - 100vw) * 23))) + min(22px, max(0px, ((460px - 100vw) * 22))) + min(27px, max(0px, ((486px - 100vw) * 27))) + min(23px, max(0px, ((501px - 100vw) * 23))) + min(35px, max(0px, ((512px - 100vw) * 35))) + min(31px, max(0px, ((517px - 100vw) * 31))) + min(19px, max(0px, ((524px - 100vw) * 19))) + min(21px, max(0px, ((554px - 100vw) * 21))) + min(23px, max(0px, ((559px - 100vw) * 23))) + min(21px, max(0px, ((570px - 100vw) * 21))) + min(27px, max(0px, ((575px - 100vw) * 27))) + min(417px, max(0px, ((593px - 100vw) * 417))) + min(21px, max(0px, ((633px - 100vw) * 21))) + min(22px, max(0px, ((652px - 100vw) * 22))) + min(35px, max(0px, ((663px - 100vw) * 35))) + min(22px, max(0px, ((677px - 100vw) * 22))) + min(21px, max(0px, ((698px - 100vw) * 21))) + min(21px, max(0px, ((702px - 100vw) * 21))) + min(22px, max(0px, ((732px - 100vw) * 22))) + min(22px, max(0px, ((753px - 100vw) * 22))) + min(53px, max(0px, ((793px - 100vw) * 53))) + min(16px, max(0px, ((795px - 100vw) * 16))) + min(22px, max(0px, ((842px - 100vw) * 22))) - min(6px, max(0px, ((847px - 100vw) * 6))) + min(31px, max(0px, ((915px - 100vw) * 31))) + min(125px, max(0px, ((933px - 100vw) * 125))) + min(21px, max(0px, ((938px - 100vw) * 21))) + min(15px, max(0px, ((939px - 100vw) * 15))) - min(11px, max(0px, ((964px - 100vw) * 11))) - min(452px, max(0px, ((1024px - 100vw) * 452))));margin:0 0 -32px;border:0;display:block" loading="lazy"></iframe>
+<script>
+/* Ajusta a altura do iframe ao conteúdo (o mesmo script dos outros embeds; se já houver um na página, não precisa repetir) */
+(function () {
+  if (window.__dividasClubes) return; window.__dividasClubes = true;
+  window.addEventListener('message', function (e) {
+    var d = e.data; if (!d || typeof d.type !== 'string' || d.type.indexOf('dividas-clubes:') !== 0) return;
+    document.querySelectorAll('iframe.dividas-clubes').forEach(function (f) {
+      if (f.contentWindow !== e.source) return;
+      if (d.type === 'dividas-clubes:pronto') f.contentWindow.postMessage({ type: 'dividas-clubes:pagina', url: location.href }, '*');
+      if (d.type === 'dividas-clubes:altura') f.style.height = d.altura + 'px';
+      if (d.type === 'dividas-clubes:rolar') {
+        var alvo = f.getBoundingClientRect().top + window.pageYOffset + d.y;
+        if (Math.abs(window.pageYOffset - alvo) > 4) window.scrollTo({ top: alvo, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+</script>
